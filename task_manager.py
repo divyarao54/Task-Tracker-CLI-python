@@ -1,6 +1,7 @@
 from task_store import load_tasks, save_tasks
 from datetime import datetime
 
+# Adding a new task
 def add_task(description):
     existing_tasks = load_tasks()
     index = max(int(t["id"]) for t in existing_tasks) + 1 if existing_tasks else 1
@@ -14,6 +15,7 @@ def add_task(description):
     existing_tasks.append(new_task)
     save_tasks(existing_tasks)
 
+# Updating an existing task
 def update_task(id, description):
     existing_tasks = load_tasks()
     found = False
@@ -28,6 +30,7 @@ def update_task(id, description):
         return
     save_tasks(existing_tasks)
 
+# Deleting an existing task
 def delete_task(id):
     existing_tasks = load_tasks()
     found = False
@@ -41,6 +44,7 @@ def delete_task(id):
         return
     save_tasks(existing_tasks)
 
+# Changing the status of an existing task
 def mark_task(id, status):
     existing_tasks = load_tasks()
     found = False
@@ -55,6 +59,7 @@ def mark_task(id, status):
         return
     save_tasks(existing_tasks)
 
+# Listing all existing tasks
 def list_tasks(status=None):
     existing_tasks = load_tasks()
 

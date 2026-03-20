@@ -1,5 +1,7 @@
 import sys
 from task_manager import add_task, update_task, delete_task, mark_task, list_tasks
+
+# Main function for parsing CLI arguments
 def main():
     if len(sys.argv) < 2:
         print("Usage: task-cli <command> [args]")
@@ -25,5 +27,6 @@ def main():
             print(f"Unknown command: {command}")
     except IndexError:
         print(f"Missing arguments for command: {command}")
+        
 if __name__ == "__main__":
     main()

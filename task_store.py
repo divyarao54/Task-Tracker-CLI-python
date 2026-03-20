@@ -1,6 +1,7 @@
 import os
 import json
 
+# For loading all the tasks from tasks.json
 def load_tasks():
     if not os.path.exists("tasks.json"):
         return []
@@ -12,6 +13,7 @@ def load_tasks():
             return []
     return tasks_data
 
+# For saving a task into tasks.json
 def save_tasks(tasks):
     with open("tasks.json", mode="w", encoding="utf-8") as write_file:
         json.dump(tasks, write_file, indent=2)
